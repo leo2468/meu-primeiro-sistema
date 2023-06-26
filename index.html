@@ -1,0 +1,91 @@
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sistema de Dizímo</title>
+        <link rel="stylesheet" href="style.css">
+
+        </head>
+        <body>
+            <h1 class="principal"><strong>MEU SITE</strong></h1>
+
+            <form action="">
+              
+        
+        <div id="itens">
+
+          
+
+
+            
+            <p><strong>VALOR DA PORCENTAGEM</strong></p>
+        
+            
+                <strong>VALOR</strong><br>
+                    <input type="Number" name="text" placeholder="digite o valor" id="text"><br><br>
+                <strong>PORCENTAGEM</strong><br>
+                <input type="Number" name="text1" placeholder="digite a porcentagem" id="text1"><br><br>
+            <input type="button" value="VALOR DA PG%" onclick="botao()">
+            <input type='reset' value='LIMPAR DADOS'/>
+            <input type="button" value="DUVIDAS" onclick="duvida()">
+        
+            <br>
+            <br>
+
+        <br>
+            <div id="res"></div>
+            <br>
+            <br>
+        </div>
+        </form>
+
+
+
+
+        
+                        <!--PARTE DO JAVASCRIPT ABAIXO -->
+
+
+        <script>
+        function botao(){
+        var n1 =window.document.getElementById('text') // recebe o valor.
+        var n2 = window.document.getElementById('text1') //recebe o valor da porcentagem.
+        var n3 = window.document.getElementById('res')
+        var v = 100
+
+        var n4 = Number( n1.value ) // converte o valor para número.
+        var n5 = Number( n2.value) // converte o valor para número.
+        var n6 = n4 * n5  // multiplica o valor da porcentagem pelo valor.
+        var n7 = n6 / v // dividi o resultado anterior com 100.
+        
+        if(n4 == 0 || n5 == 0){
+            n3.innerHTML = 'Por favor preencha os campos acima!!'
+            n3.style.color = 'white'
+
+        }else{
+
+        n3.innerHTML = ` O valor  de ${ n5}%   de  ${'R$:' + n4.toFixed(2)} é ${'R$: ' + n7.toFixed(2)} ! `
+        n3.style.color = 'white'
+
+        }
+    }
+
+        function duvida(){
+            var n3 = window.document.getElementById('res')
+
+            n3.innerHTML = 'durante a digitação do valor, coloque vírgula para colocar as moidas'
+            n3.style.color = 'yellow'
+        }
+            
+        
+
+        
+            
+
+        </script>
+
+            
+        </body>
+        </html>
